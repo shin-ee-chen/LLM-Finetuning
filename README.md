@@ -9,9 +9,7 @@
    For Snellius, use
    ```bash
    source activate llm2023
-    ```
    
-
    cd peft
    pip install -e .
    cd ..
