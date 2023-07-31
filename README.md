@@ -3,8 +3,14 @@
 1. Install dependencies
 
    ```bash
-   conda create LLM -n python=3.10
-   conda activate LLM
+   conda create -n llm2023 python=3.10
+   conda activate llm2023
+   ```
+   For Snellius, use
+   ```bash
+   source activate llm2023
+    ```
+   
 
    cd peft
    pip install -e .
