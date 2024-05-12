@@ -1,0 +1,5 @@
+{
+    "description": "Template used by KDD RAG challenge baselin.",
+    "prompt_input": "### Question\n{instruction}\n\n### References\n{input}\n\n### Answer\n",
+    "response_split": "### Answer\n"    
+}
