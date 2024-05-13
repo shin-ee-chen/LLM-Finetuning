@@ -12,6 +12,8 @@ module load 2023
 module load Miniconda3/23.5.2-0
 module load CUDA/12.1.1
 
+source activate kdd-rag
+
 cd LLM-Finetuning
 
 python data_preprocess.py

@@ -7,7 +7,7 @@ from blingfire import text_to_sentences_and_offsets
 from bs4 import BeautifulSoup
 from models.utils import trim_predictions_to_max_token_length
 from sentence_transformers import SentenceTransformer
-
+from tqdm import tqdm
 
 import bz2
 import json
@@ -55,7 +55,7 @@ class RAGDataLoader:
         """
         # Load a sentence transformer model optimized for sentence embeddings, using CUDA if available.
         self.sentence_model = SentenceTransformer(
-            "models/sentence-transformers/all-MiniLM-L6-v2", device="cuda"
+            "sentence-transformers/gtr-t5-xl", device="cuda"
         )
 
         # Define the number of context sentences to consider for generating an answer.
@@ -151,8 +151,8 @@ if __name__ == "__main__":
             ground_truth = str(data["answer"]).strip().lower()
             processed_data.append(
                 {
-                    "query": query,
-                    "references": references,
+                    "instruction": query,
+                    "input": references,
                     "label":  ground_truth
                  }
             )
